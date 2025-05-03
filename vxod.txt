@@ -1,0 +1,4 @@
+cd C:\Users\user\my_env\databace
+C:\Users\user\my_env\Scripts\activate
+
+python manage.py runserver

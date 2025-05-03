@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KinoVerse - Фильмдер</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #3b82f6;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #111827;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 2px solid #334155;
+    }
+    nav a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #93c5fd;
+    }
+    .content {
+      padding: 40px;
+    }
+    .search-form {
+      margin-bottom: 30px;
+    }
+    .search-form div {
+      margin-bottom: 10px;
+    }
+    .search-form input {
+      padding: 8px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .films {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #facc15;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #1e293b;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KinoVerse</h1>
+  </header>
+  <nav>
+    <a href="/">Басты бет</a>
+    <a href="/films">Фильмдер</a>
+    <a href="/users">Қолданушылар</a>
+    <a href="/login">Кіру</a>
+  </nav>
+
+  <!-- Іздеу формасы -->
+  <div class="content">
+    <form class="search-form" method="get">
+      <div>
+        <label for="id_title">Фильм атауы:</label>
+        <input type="text" name="title" id="id_title" value="{{ request.GET.title }}">
+      </div>
+      <div>
+        <label for="id_year">Жылы:</label>
+        <input type="number" name="year" id="id_year" value="{{ request.GET.year }}">
+      </div>
+      <div>
+        <label for="id_rating">Бағалау:</label>
+        <input type="number" name="rating" id="id_rating" value="{{ request.GET.rating }}">
+      </div>
+      <button type="submit">Іздеу</button>
+    </form>
+
+    <!-- Фильмдер тізімі -->
+    <div class="films">
+      {% for film in films %}
+        <div class="card">
+          <h3>{{ film.title }}</h3>
+          <p>{{ film.year }} - {{ film.rating }}</p>
+          <p>{{ film.desc }}</p>
+        </div>
+      {% empty %}
+        <p>Іздеуге сәйкес фильмдер табылмады.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 KinoVerse. Барлық құқықтар қорғалған.
+  </footer>
+</body>
+</html>
+

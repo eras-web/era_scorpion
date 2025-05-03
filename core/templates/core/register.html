@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тіркелу – KinoVerse</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e3a8a, #0f172a);
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-card {
+      background: rgba(30, 41, 58, 0.85);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      width: 320px;
+    }
+    .form-card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #facc15;
+    }
+    .form-card label {
+      display: block;
+      margin: 12px 0 4px;
+      font-size: 0.9rem;
+    }
+    .form-card input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .form-card button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .form-card button:hover {
+      background: #2563eb;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+    .login-link a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-card">
+    <h2>Тіркелу</h2>
+    <form method="post">
+      {% csrf_token %}
+      <label for="username">Пайдаланушы аты</label>
+      <input id="username" name="username" type="text" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="password1">Құпиясөз</label>
+      <input id="password1" name="password1" type="password" required />
+
+      <label for="password2">Құпиясөзді растау</label>
+      <input id="password2" name="password2" type="password" required />
+
+      <button type="submit">Жіберу</button>
+    </form>
+    <div class="login-link">
+      Бұрын тіркелгенсіз бе? <a href="/login">Кіру</a>
+    </div>
+  </div>
+</body>
+</html>

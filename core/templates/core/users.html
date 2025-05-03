@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KinoVerse - Қолданушылар</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1e3a8a, #0f172a);
+      color: #e5e7eb;
+    }
+    header {
+      background-color: #111827;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3b82f6;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #facc15;
+    }
+    .user-list {
+      max-width: 900px;
+      margin: 50px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .user-card {
+      background-color: #1f2937;
+      border-radius: 16px;
+      padding: 20px;
+      width: 240px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .user-card:hover {
+      transform: scale(1.05);
+    }
+    .user-card h3 {
+      margin: 0;
+      color: #60a5fa;
+    }
+    .user-card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #111827;
+      color: #64748b;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Қолданушылар тізімі</h1>
+  </header>
+  <div class="user-list">
+    <div class="user-card">
+      <h3>Айгүл Т.</h3>
+      <p>Кино сыншысы, драмаларды ұнатады.</p>
+    </div>
+    <div class="user-card">
+      <h3>Әлихан Ж.</h3>
+      <p>Тарихи фильмдер жанкүйері. Аптасына 3 фильм көреді.</p>
+    </div>
+    <div class="user-card">
+      <h3>Маржан С.</h3>
+      <p>Жаңа шыққан фильмдерді шолу жасайды.</p>
+    </div>
+    <div class="user-card">
+      <h3>Нұрсұлтан Е.</h3>
+      <p>Ғылыми-фантастика жанрын сүйеді.</p>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 KinoVerse. Қолданушыларға арналған бет.
+  </footer>
+</body>
+</html>
